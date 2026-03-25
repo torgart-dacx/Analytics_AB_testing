@@ -1,9 +1,4 @@
-"""
-JetBrains Onboarding A/B Test — Activation Pattern Analysis
-============================================================
-Reproduces the full analysis from the HTML report using pandas + seaborn.
-Outputs five publication-ready plots saved as PNG files.
-"""
+""" A/B Test — Activation Pattern Analysis """
 
 import math
 import warnings
@@ -15,7 +10,7 @@ import seaborn as sns
 
 warnings.filterwarnings("ignore")
 
-# ── Style ──────────────────────────────────────────────────────────────────────
+# Style 
 sns.set_theme(style="darkgrid", palette="muted", font_scale=1.1)
 plt.rcParams.update({
     "figure.facecolor": "#0f1117",
@@ -39,14 +34,14 @@ RED    = "#f87171"
 YELLOW = "#ffe66d"
 ORANGE = "#f97b6b"
 
-# ── Load data ──────────────────────────────────────────────────────────────────
+# Load data
 import os
 _HERE = os.path.dirname(os.path.abspath(__file__))
 CSV = os.path.join(_HERE, "License_activation_ab_test_dataset_3ver.csv")
 df = pd.read_csv(CSV)
 print(f"Loaded {len(df):,} rows × {df.shape[1]} columns\n")
 
-# ── Helper: manual Welch t-statistic ──────────────────────────────────────────
+# Helper: manual Welch t-statistic
 def welch_t(a, b):
     ma, mb = np.mean(a), np.mean(b)
     sa, sb = np.std(a, ddof=1), np.std(b, ddof=1)
@@ -54,7 +49,7 @@ def welch_t(a, b):
     se = math.sqrt(sa**2 / na + sb**2 / nb)
     return (ma - mb) / se
 
-# ── Helper: manual chi-square ─────────────────────────────────────────────────
+# Helper: manual chi-square
 def chi2_1dof(ct):
     total = ct.values.sum()
     rs = ct.sum(axis=1).values
@@ -65,9 +60,7 @@ def chi2_1dof(ct):
         for j in range(ct.shape[1])
     )
 
-# ═══════════════════════════════════════════════════════════════════════════════
 # PLOT 1 — A/B Activation Rate Comparison
-# ═══════════════════════════════════════════════════════════════════════════════
 print("─" * 60)
 print("PLOT 1 · A/B Activation Rate Comparison")
 
@@ -121,9 +114,7 @@ plt.close()
 print("  → saved plot1_ab_comparison.png\n")
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
 # PLOT 2 — The 30-Minute Cliff
-# ═══════════════════════════════════════════════════════════════════════════════
 print("─" * 60)
 print("PLOT 2 · The 30-Minute Cliff")
 
@@ -179,9 +170,7 @@ plt.close()
 print("  → saved plot2_30min_cliff.png\n")
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
 # PLOT 3 — Time to First Run Distribution: Activated vs Not
-# ═══════════════════════════════════════════════════════════════════════════════
 print("─" * 60)
 print("PLOT 3 · Time-to-First-Run Distribution by Activation Status")
 
@@ -230,9 +219,7 @@ plt.close()
 print("  → saved plot3_time_distribution.png\n")
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
 # PLOT 4 — Time to First Run: Group A vs Group B
-# ═══════════════════════════════════════════════════════════════════════════════
 print("─" * 60)
 print("PLOT 4 · Time to First Run: Group A vs Group B")
 
@@ -282,9 +269,7 @@ plt.close()
 print("  → saved plot4_group_time_comparison.png\n")
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
 # PLOT 5 — Feature Usage: Impact on Activation
-# ═══════════════════════════════════════════════════════════════════════════════
 print("─" * 60)
 print("PLOT 5 · Day-1 Feature Usage vs Activation")
 
@@ -347,9 +332,8 @@ plt.close()
 print("  → saved plot5_feature_usage.png\n")
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
+
 # Summary
-# ═══════════════════════════════════════════════════════════════════════════════
 print("=" * 60)
 print("ALL PLOTS SAVED:")
 for i, name in enumerate([
