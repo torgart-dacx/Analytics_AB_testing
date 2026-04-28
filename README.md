@@ -19,5 +19,7 @@ This project analyzes a 15,000-user A/B experiment on IDE, with a focus on under
 | `used_refactoring_day1` | Used refactoring feature on day 1 (0/1) |
 
 
+
+### Key findings
 ![picture alt](https://github.com/torgart-dacx/Analytics_AB_testing/blob/main/plot1_ab_comparison.png)
 
