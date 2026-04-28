@@ -18,3 +18,6 @@ This project analyzes a 15,000-user A/B experiment on IDE, with a focus on under
 | `used_autocomplete_day1` | Used autocomplete feature on day 1 (0/1) |
 | `used_refactoring_day1` | Used refactoring feature on day 1 (0/1) |
 
+
+![picture alt]([https://github.com/torgart-dacx/Metrics/blob/main/Metrics_chain.png](https://github.com/torgart-dacx/Analytics_AB_testing/blob/main/plot1_ab_comparison.png))
+
