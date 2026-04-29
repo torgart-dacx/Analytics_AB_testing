@@ -25,7 +25,7 @@ This project analyzes a 15,000-user A/B experiment on IDE, with a focus on under
 
 ![picture alt](https://github.com/torgart-dacx/Analytics_AB_testing/blob/main/plot2_30min_cliff.png)
 
-![picture alt](https://github.com/torgart-dacx/Analytics_AB_testing/blob/main/plot3_time_distibution.png)
+![picture alt](https://github.com/torgart-dacx/Analytics_AB_testing/blob/main/plot3_time_distribution.png)
 
 ![picture alt](https://github.com/torgart-dacx/Analytics_AB_testing/blob/main/plot4_group_time_comparison.png)
 
