@@ -20,7 +20,7 @@ This project analyzes a 15,000-user A/B experiment on IDE, with a focus on under
 
 
 
-### Key findings
+### Key plots
 ![picture alt](https://github.com/torgart-dacx/Analytics_AB_testing/blob/main/plot1_ab_comparison.png)
 
 ![picture alt](https://github.com/torgart-dacx/Analytics_AB_testing/blob/main/plot2_30min_cliff.png)
